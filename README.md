@@ -40,7 +40,7 @@ Unlike previous "Arrow" prototypes, the Type-S utilizes a balanced, circular geo
 4\. Power & Charging Architecture
 ---------------------------------
 
-**Gundam Robotics Systems** has deprecated the onboard "Spider Crab" reactor model in favor of a "Grid-to-Hull" charging protocol.
+**Gundam Robotics Systems** has deprecated the onboard "Spider Crab" nuclear reactor model in favor of a "Grid-to-Hull" charging protocol.
 
 -   **Source:** High-Voltage AC tapped directly from power substations.
 
