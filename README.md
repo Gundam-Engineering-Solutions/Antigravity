@@ -75,5 +75,3 @@ We are now ready to move to the **Gemini Integration Phase**.
 -   **Documentation:** We will generate full technical specs for the plate bolt patterns and dielectric seals.
 
 -   **SCAD Files:** We will write the OpenSCAD script to generate the 360-segment ring and the central separator plate.
-
-Shall I begin generating the OpenSCAD code for the Type-S hull plates?
