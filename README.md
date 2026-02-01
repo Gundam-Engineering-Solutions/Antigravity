@@ -29,7 +29,7 @@ The system operates on the principle of **Like-Charge Repulsion**:
 3\. The Type-S "Saiya" Design
 -----------------------------
 
-Unlike previous (way to advanced for this github archive) "Arrow" prototypes, the Type-S utilizes a balanced, circular geometry for simplified plate design and omnidirectional stability.
+Unlike previous (way too advanced for this github archive) "Arrow" prototypes, the Type-S utilizes a balanced, circular geometry for simplified plate design and omnidirectional stability.
 
 -   **Structure:** Two primary hull plates (Dorsal/Ventral) sealed and bolted with a central dielectric separator plate.
 
