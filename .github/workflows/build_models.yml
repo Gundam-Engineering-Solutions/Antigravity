@@ -1,0 +1,45 @@
+name: Build Type-S 3D Models
+
+# Trigger the workflow on every push to the main branch
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '*.scad' # Only run if a .scad file changes
+
+jobs:
+  render_models:
+    name: Render OpenSCAD to STL
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repository content
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Install OpenSCAD on the Linux runner
+      - name: Install OpenSCAD
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+
+      # 3. Create output directory
+      - name: Create STL Directory
+        run: mkdir -p stl_output
+
+      # 4. Run OpenSCAD via Command Line
+      # We render the specific file: type_s_saiya.scad
+      - name: Render Type-S Hull
+        run: |
+          openscad -o stl_output/type_s_saiya.stl type_s_saiya.scad
+          echo "Render Complete: type_s_saiya.stl"
+
+      # 5. Save the STL as an Artifact
+      # You can download this from the "Actions" tab in GitHub
+      - name: Upload STL Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: type-s-hull-stl
+          path: stl_output/*.stl
+          retention-days: 5
