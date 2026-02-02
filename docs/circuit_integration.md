@@ -17,3 +17,12 @@ In the Type-S Hub, all latch gates must be oriented **OUTWARD** from the center 
 ## Modules
 1.  **Pressurized Crystal (Jamoni):** Installed in the central chamber. Acts as the master clock for stabilizing the 98-Coulomb field.
 2.  **SCUBA Power Tap (Theo):** Auxiliary port available on the ventral side for powering EVA suits or atmospheric diving gear.
+
+### 3. The Jamoni Master Crystal
+* [cite_start]**Geometry:** Circular Disk (Thickness-Shear Mode).
+* **Material:** SC-Cut Quartz (Stress Compensated).
+* [cite_start]**Cut Angles:** $\phi = 22^\circ$, $\theta = 34^\circ$[cite: 6].
+* **Function:**
+    * Acts as the master clock for the Snap Circuit Double Latch Gates.
+    * [cite_start]Minimizes frequency drift caused by the immense pressure of the anti-gravity field[cite: 6].
+    * [cite_start]**Mounting:** Edge-mounted to allow the center of the disk to vibrate freely without dampening.
