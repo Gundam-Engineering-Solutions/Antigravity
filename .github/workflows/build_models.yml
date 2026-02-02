@@ -29,11 +29,18 @@ jobs:
         run: mkdir -p stl_output
 
       # 4. Run OpenSCAD via Command Line
-      # We render the specific file: type_s_saiya.scad
-      - name: Render Type-S Hull
+      - name: Render Type-S V2 Components
         run: |
-          openscad -o stl_output/type_s_saiya.stl type_s_saiya.scad
-          echo "Render Complete: type_s_saiya.stl"
+          # Render the Full Ship (For Display/Desktop Model)
+          openscad -o stl_output/type_s_full_assembly.stl assembly_v2.scad
+          
+          # Render The Hull Ring (For Large Format Printing)
+          openscad -o stl_output/hull_ring_v2.stl type_s_saiya_v2.scad
+          
+          # Render The Server Core (For Resin Printing)
+          openscad -o stl_output/server_core_v2.stl central_hub_saiya_v2.scad
+          
+          echo "Render Complete: Full Assembly, Hull, and Core."
 
       # 5. Save the STL as an Artifact
       # You can download this from the "Actions" tab in GitHub
