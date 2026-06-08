@@ -1,0 +1,9 @@
+# CLI and Interface
+typer[all]
+pydantic
+pydantic-settings
+
+# Numerical and Performance
+numpy
+numba
+pandas
