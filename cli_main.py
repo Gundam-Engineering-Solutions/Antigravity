@@ -115,6 +115,19 @@ def spec(
         typer.echo(spec_file.read_text())
     else:
         typer.secho(f"Spec file not found at {spec_file}.", fg=typer.colors.RED)
-        
+@app.command()
+def bak_specs(
+    doc: str = typer.Argument("bak_integration_overview", help="Available docs: bak_integration_overview, flight_dynamics_mapping, telemetry_and_export")
+):
+    """
+    Retrieves documentation for integrating the Antigravity EMA with the BAK avionics software.
+    """
+    spec_file = REPO_ROOT / "docs" / f"{doc}.md"
+    if spec_file.exists():
+        typer.secho(f"--- Accessing {doc} ---", fg=typer.colors.CYAN)
+        typer.echo(spec_file.read_text())
+    else:
+        typer.secho(f"BAK integration document '{doc}' not found.", fg=typer.colors.RED)
+
 if __name__ == "__main__":
     app()
