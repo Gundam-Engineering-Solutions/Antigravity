@@ -57,7 +57,43 @@ Unlike previous (way too advanced for this github archive) "Arrow" prototypes, t
 
 -   **Phase 4:** Prototype "Snap Circuit" Bus Fabrication
 
-6\. References
+6\. Mathematical Foundations & Physics
+--------------------------------------
+
+The Type-S Saiya platform utilizes high-magnitude electrostatic displacement combined with dynamic charge routing to achieve both lift and anomalous maneuverability. The flight control system calculates required plate saturation in real-time based on the following physical principles:
+
+-   **Electrostatic Lift (Hover & Ascent)** 
+To counteract Earth's gravitational pull, the ventral plates must generate a repulsive electrostatic force ($F_e$) equal to or greater than the vessel's gravitational downward force ($F_g$). 
+
+$$F_g = m \cdot g$$
+$$F_e = q \cdot E$$
+
+Where:
+* $m$ = Mass of the vessel (e.g., $1,000 \text{ kg}$)
+* $g$ = Acceleration due to gravity ($9.8 \text{ m/s}^2$)
+* $q$ = Total electrostatic charge on the ventral hull (Coulombs)
+* $E$ = Earth's surface electric field (approx. $100 \text{ N/C}$)
+
+To achieve a stable hover for a 1-metric-ton chassis, the required continuous static charge is calculated as:
+$$q = \frac{m \cdot g}{E} = \frac{9,800 \text{ N}}{100 \text{ N/C}} = 98 \text{ Coulombs}$$
+
+-   **Omnidirectional Maneuverability (The Zig-Zag)**
+Traditional aircraft bank to turn, relying on aerodynamic lift. The Type-S array achieves horizontal translation and sharp trajectory changes by instantly altering the charge density across specific quadrants of the 360-degree plate ring, creating a localized asymmetric repulsion vector.
+
+For extreme right-angle or hypersonic turns, the required centripetal acceleration ($a_c$) dictates the necessary charge bias applied to the leading plates:
+
+$$a_c = \frac{v^2}{r}$$
+
+Where $v$ is the horizontal velocity and $r$ is the turning radius. 
+
+-   **Fluid Dynamic Mitigation (Trans-Medium Travel)**
+By projecting the electrostatic field slightly ahead of the physical hull boundaries, the system mitigates boundary layer drag during atmospheric or aquatic translation, minimizing the standard drag force:
+
+$$F_D = \frac{1}{2} \rho v^2 C_D A$$
+
+By effectively reducing the fluid density ($\rho$) immediately surrounding the hull via ionization, the vessel bypasses typical aerodynamic thermal signatures.
+
+7\. References
 --------------
 
 -   **Design Inspiration:** [Saiyan Medical Assistance Fleet Support Vessel](https://www.youtube.com/watch?v=sjL1deIIvMk)
