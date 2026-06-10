@@ -1,11 +1,9 @@
-# cli_main.py
 import typer
 import logging
 import subprocess
 from pathlib import Path
 from typing import Optional
 
-# Configure system logs for FAA/Federal compliance
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] [%(levelname)s] %(message)s")
 
 app = typer.Typer(
@@ -14,7 +12,6 @@ app = typer.Typer(
     add_completion=False
 )
 
-# --- SAFETY WRAPPER ---
 def verify_system_integrity(func):
     """Ensures environment variables and files exist before operation."""
     def wrapper(*args, **kwargs):
@@ -48,7 +45,6 @@ def render(
     subprocess.run(["openscad", "-o", f"{component}.{format}", file_path])
     typer.echo("Render complete. Asset verified.")
 
-@app.command()
 def power_cycle(
     source: str = typer.Option("GRID", help="Power Source: GRID or NUCLEAR (Legacy)"),
     voltage: float = typer.Option(480.0, help="Bus voltage in Volts")
