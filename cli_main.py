@@ -23,7 +23,19 @@ def verify_system_integrity(func):
             typer.secho("WARNING: CAD Asset missing in root.", fg=typer.colors.YELLOW)
         return func(*args, **kwargs)
     return wrapper
-    
+
+@app.command()
+def math():
+    """
+    Retrieves the theoretical framework, mathematical models, and plasma chemistry equations for researchers.
+    """
+    spec_file = REPO_ROOT / "docs" / "theoretical_framework.md"
+    if spec_file.exists():
+        typer.secho("--- Accessing Theoretical Framework ---", fg=typer.colors.MAGENTA)
+        typer.echo(spec_file.read_text())
+    else:
+        typer.secho("Theoretical framework file not found.", fg=typer.colors.RED)
+        
 @app.command()
 @verify_system_integrity
 def render(
