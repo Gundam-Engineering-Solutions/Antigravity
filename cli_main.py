@@ -23,7 +23,14 @@ def verify_system_integrity(func):
             typer.secho("WARNING: CAD Asset missing in root.", fg=typer.colors.YELLOW)
         return func(*args, **kwargs)
     return wrapper
-
+    
+@app.command()
+@verify_system_integrity
+def render(
+    component: str = typer.Argument(..., help="Component name (e.g., central_hub_saiya_v4)"),
+    format: str = typer.Option("stl", help="Output format (stl, dxf, png)")
+):
+    
 @app.command()
 def render(
     component: str = typer.Argument(..., help="Component name (e.g., central_hub_saiya_v4)"),
