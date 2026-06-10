@@ -91,6 +91,18 @@ def spec(
         typer.echo(spec_file.read_text())
     else:
         typer.secho(f"Spec file not found at {spec_file}.", fg=typer.colors.RED)
+@app.command()
 
+def spec(
+    component: str = typer.Argument("overview", help="Component file: overview, coil_specifications, fluid_dynamics_simulation, electrical_schematic")
+):
+    """Retrieves technical specifications from documentation."""
+    spec_file = REPO_ROOT / "docs" / f"{component}.md"
+    if spec_file.exists():
+        typer.secho(f"--- Accessing {spec_file.name} ---", fg=typer.colors.CYAN)
+        typer.echo(spec_file.read_text())
+    else:
+        typer.secho(f"Spec file not found at {spec_file}.", fg=typer.colors.RED)
+        
 if __name__ == "__main__":
     app()
