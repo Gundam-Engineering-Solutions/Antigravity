@@ -1,0 +1,40 @@
+// Regenerative Shock Absorber - Linear Generator Prototype
+
+// Parameters
+tube_outer_radius = 25;
+tube_inner_radius = 20;
+tube_length = 200;
+coil_thickness = 3;
+magnet_radius = 18;
+magnet_length = 40;
+
+// Main Housing Tube
+module housing_tube() {
+    color("silver")
+    difference() {
+        cylinder(h = tube_length, r = tube_outer_radius, center = true, $fn = 100);
+        cylinder(h = tube_length + 2, r = tube_inner_radius, center = true, $fn = 100);
+    }
+}
+
+// Copper Coil Winding (Simplified representation)
+module copper_coil() {
+    color("copper", 0.8)
+    difference() {
+        cylinder(h = tube_length - 20, r = tube_outer_radius + coil_thickness, center = true, $fn = 100);
+        cylinder(h = tube_length - 18, r = tube_outer_radius, center = true, $fn = 100);
+    }
+}
+
+// Internal Moving Magnet (The "Piston")
+module internal_magnet(position_z = 0) {
+    color("darkgrey")
+    translate([0, 0, position_z])
+    cylinder(h = magnet_length, r = magnet_radius, center = true, $fn = 100);
+}
+
+// Assembly
+housing_tube();
+copper_coil();
+// Show magnet displaced (e.g., during compression)
+internal_magnet(position_z = -40);
